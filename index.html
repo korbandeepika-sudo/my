@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Valentine ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  background: #000;
+  color: white;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 40px;
+}
+
+.hero {
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+}
+
+.rose { background: linear-gradient(to right, #ff758c, #ff7eb3); }
+.propose { background: linear-gradient(to right, #f857a6, #ff5858); }
+.choco { background: linear-gradient(to right, #654321, #3e2723); }
+.teddy { background: linear-gradient(to right, #ff9a9e, #fad0c4); }
+.promise { background: linear-gradient(to right, #43cea2, #185a9d); }
+.hug { background: linear-gradient(to right, #fbc2eb, #a6c1ee); }
+.kiss { background: linear-gradient(to right, #ff0844, #ffb199); }
+.valentine { background: linear-gradient(to right, #8e2de2, #ff416c); }
+
+.card {
+  background: rgba(255,255,255,0.15);
+  padding: 30px;
+  border-radius: 25px;
+  max-width: 500px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+.gift {
+  font-size: 90px;
+  margin: 20px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gift:hover {
+  transform: scale(1.3);
+}
+
+button {
+  padding: 14px 28px;
+  font-size: 18px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.yes {
+  background: #ff4d6d;
+  color: white;
+}
+
+.no {
+  background: white;
+  color: #ff4d6d;
+  position: absolute;
+}
+
+#hearts span {
+  position: fixed;
+  bottom: -10px;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  0% {transform: translateY(0); opacity: 1;}
+  100% {transform: translateY(-120vh); opacity: 0;}
+}
+
+.music-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.2);
+  padding: 10px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <h1>Happy Valentine Week ❤️</h1>
+  <p>Scroll down… Aage aur bhi surprise hai 💖</p>
+</section>
+
+<section class="rose">
+  <div class="card">
+    <h2>🌹 Rose Day</h2>
+    <div class="gift" onclick="alert('A rose for my love 🌹')">🌹</div>
+    <p>You make my world bloom</p>
+  </div>
+</section>
+
+<section class="propose">
+  <div class="card">
+    <h2>💍 Propose Day</h2>
+    <div class="gift" onclick="alert('Will you always be mine? 💍')">💍</div>
+    <p>I choose you today,tomorrow & forever </p>
+  </div>
+</section>
+
+<section class="choco">
+  <div class="card">
+    <h2>🍫 Chocolate Day</h2>
+    <div class="gift" onclick="alert('Sweet like you 🍫')">🍫</div>
+    <p>Life tastes better with you</p>
+  </div>
+</section>
+
+<section class="teddy">
+  <div class="card">
+    <h2>🧸 Teddy Day</h2>
+    <div class="gift" onclick="alert('Sending you a soft teddy hug 🧸')">🧸</div>
+    <p>Whenever you miss me</p>
+  </div>
+</section>
+
+<section class="promise">
+  <div class="card">
+    <h2>🤝 Promise Day</h2>
+    <div class="gift" onclick="alert('I promise to stay 🤝')">🤝</div>
+    <p>I promise to love you endlessly</p>
+  </div>
+</section>
+
+<section class="hug">
+  <div class="card">
+    <h2>🤗 Hug Day</h2>
+    <div class="gift" onclick="alert('A warm hug just for you 🤗')">🤗</div>
+    <p>Feel my love around you</p>
+  </div>
+</section>
+
+<section class="kiss">
+  <div class="card">
+    <h2>💋 Kiss Day</h2>
+    <div class="gift" onclick="alert('A sweet kiss 💋')">💋</div>
+    <p>With all my love</p>
+  </div>
+</section>
+
+<section class="valentine">
+  <div class="card">
+    <h2>🕯️ Valentine’s Day</h2>
+    <div class="gift" onclick="alert('Candle night with you 🕯️❤️')">🕯️</div>
+
+    <h3>Will you be my Valentine? Aur kya aap mujhse shadi karoge? 💖</h3>
+    <button class="yes" onclick="yes()">YES ❤️</button>
+    <button class="no" id="noBtn" onmouseover="moveNo()">NO 😜</button>
+
+    <h2 id="answer"></h2>
+  </div>
+</section>
+
+<script>
+function playMusic() {
+  document.getElementById("music").play();
+}
+
+function yes() {
+  document.getElementById("answer").innerHTML =
+    "YAY! I knew it 😍❤️";
+}
+
+function moveNo() {
+  let btn = document.getElementById("noBtn");
+  btn.style.top = Math.random() * 80 + "vh";
+  btn.style.left = Math.random() * 80 + "vw";
+}
+
+function createHearts() {
+  const heart = document.createElement("span");
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 24 + 12 + "px";
+  document.getElementById("hearts").appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}
+
+setInterval(createHearts, 300);
+</script>
+
+</body>
+</html>
